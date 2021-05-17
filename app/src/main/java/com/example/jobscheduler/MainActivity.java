@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         JobInfo info = new JobInfo.Builder(123, componentName)
                 .setRequiresCharging(true)
                 .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)  // Means only WiFi
-                .setPersisted(true)  // required restart
+                .setPersisted(true)  // Even restart the service will continue until completed
                 .setPeriodic(15*60*1000)  // minimum 15 minutes
                 .build();
         JobScheduler scheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
